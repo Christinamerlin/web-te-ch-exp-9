@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="styles.css" rel="stylesheet"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>&gt;
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>&gt;
+    <script>
+        var app = angular.module("myapp",['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider
+            .when('/login',{
+                templateUrl:'login.html'
+                })
+            .when('/register',{
+                templateUrl:'register.html'
+                })
+            .when('/info',{
+                templateUrl:'info.html'
+                })
+            .when('/branch',{
+                templateUrl:'branch.html'
+            })
+        })
+    </script>
+</head>
+<body ng-app="myapp">
+    <h1 class="header">Infosys</h1>
+    <div class="sidebar">
+        <a href="#!login">Login</a>
+        <a href="#!register">New User?</a>
+        <a href="#!info">About the organization</a>
+        <a href="#!branch">Our branches</a>
+    </div>
+    <div class="content">
+        <div ng-view></div>  
+          
+    
+</body>
+</html>
